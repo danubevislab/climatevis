@@ -134,7 +134,7 @@
 
                         <li ng-click="open(paper)" ng-repeat="paper in filtered = (papers | filter: search |filter: {year:filters.year}  | orderBy:['-year', 'title'])" class="paper-listing paper-animation">
                             
-                            <div class="thumbnail-image"><div class="galleryImgWrapper"><img ng-show="paper.ID" title="{{paper.title}}" ng-src="https://danubevislab.github.io/papers/screenshots/{{paper.ID}}.PNG"></div></div>
+                            <div class="thumbnail-image"><div class="galleryImgWrapper"><img ng-show="paper.ID" title="{{paper.title}}" ng-src="https://danubevislab.github.io/climatevis/papers/screenshots/{{paper.ID}}.PNG"></div></div>
                            
                             <em>{{paper.authors}}</em><br/>
                             <strong>{{paper.title}}</strong> ({{paper.year}})<br/>
@@ -154,7 +154,7 @@
 
                         <li ng-repeat="paper in filtered = (papers| filter: search  | filter: {year:filters.year} | orderBy:['-year', 'title'])" class="paper-thumbnails paper-animation">
                             <!-- <a href ng-click="open(paper)" class="thumbnail-image"><div class="galleryImgWrapper"><img title="{{paper.title}}" ng-src="papers/{{paper.thumbnail && (paper.thumbnail) || ('missing.png')}}"></div></a> -->
-                            <a href ng-click="open(paper)" class="thumbnail-image"><div class="galleryImgWrapper"><img title="{{paper.title}}" ng-src="https://danubevislab.github.io/papers/screenshots/{{paper.ID}}.PNG"></div></a>
+                            <a href ng-click="open(paper)" class="thumbnail-image"><div class="galleryImgWrapper"><img title="{{paper.title}}" ng-src="https://danubevislab.github.io/climatevis/papers/screenshots/{{paper.ID}}.PNG"></div></a>
 
                         </li>
 
