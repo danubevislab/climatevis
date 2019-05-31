@@ -2,7 +2,7 @@
 <html lang="en" ng-app="vizsecPapers">
     <head>
         <meta charset="utf-8">
-        <title>EnvirVis Papers</title>
+        <title>Climate Change Visualizations</title>
 
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 
@@ -29,7 +29,7 @@
         <script src="js/services.js"></script>
     </head>
     <body>
-        <div class="view-container" ng-controller="MainController">
+        <div class="view-container container-fluid" ng-controller="MainController">
 
             <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
                 <div class="container-fluid">
@@ -40,7 +40,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="">ClimateVis Survey</a>
+                        <a class="navbar-brand" href="">Climate Change Visualizations</a>
                     </div>
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -62,7 +62,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <!-- <li><a href="https://ff.cx/contact/"><i class="glyphicon glyphicon-envelope"></i><span>&nbsp; Imprint</span></a></li> -->
                             <!-- <li><a href="https://ff.cx/privacy/"><i class="glyphicon glyphicon-eye-open"></i><span>&nbsp; Privacy Policy</span></a></li> -->
-                            <li><a href="" target="_blank"><i class="glyphicon glyphicon-info-sign"></i><span>&nbsp; Publication</span></a></li>
+                            <li><a href="" target="_blank"><i class="glyphicon glyphicon-info-sign"></i><span>&nbsp; Survey Paper (PDF)</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -82,47 +82,50 @@
                                 <a class="list-group-item" ng-class="{ active: filters.year == paper.year }" ng-repeat="paper in papers| unique:'year' | orderBy:['-year']" ng-click="filters.year = paper.year; updateVis();">{{paper.year}} <span class="badge">  {{ (papers | filter: {year:paper.year} | filter: search).length}} </span></a>
                               </div>
                 </div>
-
-                <div class="col-sm-10 text-center">
+                <div class="col-sm-10">
+                    <div class="col-sm-10 text-center">
                         <div class="starter-template">
-                                <h3>Climate Change Vis Survey</h1>
+                                <h3 class="header-title"> Visualization Approaches to Climate Change</h1>
                                 <p class="lead">
-                                        This is a list of Climate related visualizations and related artifacts, maintained by DanubeVislab.
+                                    This is a collection of visualizations of climate change (CC) with a focus on representations for public audiences. It is the result from a Survey Study (= link to PDF again) , which has been initiated by DanubeVISlab, and which is intended to steadily grow. Please send new candidates to mail adress (tba).
                                 </p>
 
-                             <a href ng-click="query = ''; updateVis();">Clear ({{(papers).length}})</a> |
-
                                 <hr>
-                                <span>Data Type:</span>
-                                <a class="label label-default" href ng-click="query = 'prognostic'; updateVis();">Co2 ({{(papers|filter: {cluster:'co2'}).length}})</a> |
+                                <span>Encoded Types of Data:</span>
                                 <a class="label label-default" href ng-click="query = 'temperature'; updateVis();">Temperature ({{(papers|filter: {cluster:'temperature'}).length}})</a> |
-                                <a class="label label-default" href ng-click="query = 'global'; updateVis();">Global ({{(papers|filter: {cluster:'global'}).length}})</a> |
-                                <a class="label label-default" href ng-click="query = 'local'; updateVis();">Local ({{(papers|filter: {cluster:'local'}).length}})</a> |
-                                <a class="label label-default" href ng-click="query = 'causes'; updateVis();">Causes ({{(papers|filter: {cluster:'causes'}).length}})</a> |
-                                <a class="label label-default" href ng-click="query = 'effects'; updateVis();">Effects ({{(papers|filter: {cluster:'effects'}).length}})</a> |
+                                <a class="label label-default" href ng-click="query = 'prognostic'; updateVis();">CO2 concentration ({{(papers|filter: {cluster:'co2'}).length}})</a> |
+                                <a class="label label-default" href ng-click="query = 'global'; updateVis();">Global Data ({{(papers|filter: {cluster:'global'}).length}})</a> |
+                                <a class="label label-default" href ng-click="query = 'local'; updateVis();">Local Data ({{(papers|filter: {cluster:'local'}).length}})</a> |
+                                <a class="label label-default" href ng-click="query = 'causes'; updateVis();">CC Causes ({{(papers|filter: {cluster:'causes'}).length}})</a> |
+                                <a class="label label-default" href ng-click="query = 'effects'; updateVis();">CC Effects ({{(papers|filter: {cluster:'effects'}).length}})</a> |
                                 <a class="label label-default" href ng-click="query = 'descriptive'; updateVis();">Descriptive ({{(papers|filter: {cluster:'descriptive'}).length}})</a> |
                                 <a class="label label-default" href ng-click="query = 'prognostic'; updateVis(); ">Prognostic ({{(papers|filter: {cluster:'prognostic'}).length}})</a> |
-                                <a class="label label-default" href ng-click="query = 'uncertainty'; updateVis(); ">Uncertainty({{(papers|filter: {cluster:'uncertainty'}).length}})</a> |
+                                <a class="label label-default" href ng-click="query = 'uncertainty'; updateVis(); ">Data Uncertainty ({{(papers|filter: {cluster:'uncertainty'}).length}})</a> |
 
                                 <hr>
-                                <span>Vis Type:</span>
+                                <span>Visualization of Temperature:</span>
                                 <a class="label label-default" href ng-click="query = 'linechart'; updateVis();">Line Chart ({{(papers|filter: {cluster:'linechart'}).length}})</a> |
                                 <a class="label label-default" href ng-click="query = 'coloredmap'; updateVis();">Colored Map ({{(papers|filter: {cluster:'coloredmap'}).length}})</a> |
                                 <a class="label label-default" href ng-click="query = 'barchart'; updateVis();">Bar Chart({{(papers|filter: {cluster:'barchart'}).length}})</a> |
+                                <a class="label label-default" href ng-click="query = 'other'; updateVis();">Other ({{(papers|filter: {cluster:'other'}).length}})</a> |
+
+                                <hr>
+                                <span>Visualization of Change over Time:</span>
                                 <a class="label label-default" href ng-click="query = '1dtimeaxis'; updateVis();">1dtimeaxis ({{(papers|filter: {cluster:'1dtimeaxis'}).length}})</a> |
                                 <a class="label label-default" href ng-click="query = '2dtimeaxis'; updateVis();">2dtimeaxis ({{(papers|filter: {cluster:'2dtimeaxis'}).length}})</a> |
                                 <a class="label label-default" href ng-click="query = '3dtimeaxis'; updateVis();">3dtimeaxis ({{(papers|filter: {cluster:'3dtimeaxis'}).length}})</a> |
                                 <a class="label label-default" href ng-click="query = 'animation-slideshow'; updateVis(); ">Animation / Slideshow ({{(papers|filter: {cluster:'animation-slideshow'}).length}})</a> |
                                 <a class="label label-default" href ng-click="query = 'colorcoding'; updateVis(); ">Color Coding({{(papers|filter: {cluster:'colorcoding'}).length}})</a> |
-                                <a class="label label-default" href ng-click="query = 'other'; updateVis();">Other ({{(papers|filter: {cluster:'other'}).length}})</a> |
+
+                                <hr>
+                                <span>Miscellaneous:</span>
 
                                 <a class="label label-default" href ng-click="query = 'multipleviews'; updateVis();">Multiple Views ({{(papers|filter: {cluster:'multipleviews'}).length}})</a> |
                                 <a class="label label-default" href ng-click="query = 'interactive'; updateVis();">Interactive ({{(papers|filter: {cluster:'interactive'}).length}})</a> |
                                 <a class="label label-default" href ng-click="query = 'video'; updateVis();">Video ({{(papers|filter: {cluster:'video'}).length}})</a> |
-                                <a class="label label-default" href ng-click="query = 'narrative'; updateVis(); ">narrative VIS ({{(papers|filter: {cluster:'narrative'}).length}})</a> |
-                                <a class="label label-default" href ng-click="query = 'colorcoding'; updateVis(); ">For public communication({{(papers|filter: {cluster:'colorcoding'}).length}})</a> |
-                                <a class="label label-default" href ng-click="query = 'other'; updateVis();">Other ({{(papers|filter: {cluster:'other'}).length}})</a> |
-
+                                <a class="label label-default" href ng-click="query = 'narrative'; updateVis(); ">Narrative VIS ({{(papers|filter: {cluster:'narrative'}).length}})</a> |
+                                <a class="label label-default" href ng-click="query = 'colorcoding'; updateVis(); ">Public Audience ({{(papers|filter: {cluster:'colorcoding'}).length}})</a> |
+                                <!-- <a class="label label-default" href ng-click="query = 'other'; updateVis();">Other ({{(papers|filter: {cluster:'other'}).length}})</a> | -->
 
                             </div>
                 </div>
@@ -150,7 +153,8 @@
 
                     <ul class="thumbnails">
 					
-                    <p><strong>Thumbnails - {{filters.year}} Papers:</strong> {{filtered.length}} / {{(papers| filter: {year:filters.year}).length }}</br></br></p>
+                    <p><strong>Thumbnails - {{filters.year}} Papers:</strong> {{filtered.length}} / {{(papers| filter: {year:filters.year}).length }} | <a href ng-click="query = ''; updateVis();">Clear Selection ({{(papers).length}})</a> 
+                    </br></br></p> 
 
                         <li ng-repeat="paper in filtered = (papers| filter: search  | filter: {year:filters.year} | orderBy:['-year', 'title'])" class="paper-thumbnails paper-animation">
                             <!-- <a href ng-click="open(paper)" class="thumbnail-image"><div class="galleryImgWrapper"><img title="{{paper.title}}" ng-src="papers/{{paper.thumbnail && (paper.thumbnail) || ('missing.png')}}"></div></a> -->
@@ -169,7 +173,7 @@
 
                 </div>
 
-
+                </div>
             </div>
 
 

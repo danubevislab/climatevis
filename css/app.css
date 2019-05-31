@@ -6,6 +6,17 @@ body {
     padding-top: 70px; 
 }
 
+hr{
+    margin-top: 1px;
+    margin-bottom: 10px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+.header-title{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
 /*
  * Hack to crop the thumbnails
  */
