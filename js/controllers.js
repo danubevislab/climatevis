@@ -119,13 +119,11 @@ var ModalInstanceCtrl = function ($scope, $modalInstance, paper) {
     $scope.paper = paper;
 
     $scope.getReference = function() {
-	if (paper.doi) {
-		return "http://dx.doi.org/" + paper.doi;
-	}
 	if (paper.url) {
 		return paper.url;
-	}
-         
+	} else if (paper.paper_url) {
+		return paper.paper_url;
+	}  
     };
 
 
