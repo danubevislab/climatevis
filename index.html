@@ -87,7 +87,7 @@
                         <div class="starter-template">
                                 <h3 class="header-title"> Visualization Approaches to Climate Change</h1>
                                 <p class="lead">
-                                    This is a collection of visualizations of climate change (CC) with a focus on representations for public audiences. It is the result from a <a href="https://www.dropbox.com/s/2ddtrghegfudhi6/On%20Inconvenient%20Images%20-%20EnvirVis2019%20-%20Preprint.pdf?dl=0" target="_blank">Survey Study</a> , which has been initiated by DanubeVISlab, and which is intended to steadily grow. Please send new candidates to mail adress (tba).
+                                    This is a collection of visualizations of climate change (CC) with a focus on representations for public audiences. It is the result from a <a href="https://www.dropbox.com/s/2ddtrghegfudhi6/On%20Inconvenient%20Images%20-%20EnvirVis2019%20-%20Preprint.pdf?dl=0" target="_blank">Survey Study</a> , which has been initiated by <a href="https://www.researchgate.net/lab/danubeVISlab-Eva-Mayr" target="_blank">DanubeVISlab</a>, and which is intended to steadily grow. Please send new candidates to mail adress (florian.windhager@donau-uni.ac.at).
                                 </p>
 
                                 <hr>
@@ -178,7 +178,8 @@
 
                     <ul class="thumbnails">
 					
-                    <p><strong>Thumbnails - {{filters.year}} Papers:</strong> {{filtered.length}} / {{(papers| filter: {year:filters.year}).length }} | <a href ng-click="query = ''; updateVis();">Clear Selection ({{(papers).length}})</a> 
+                    <!-- <p><strong> Thumbnails - {{filters.year}} Papers:</strong> {{filtered.length}} / {{(papers| filter: {year:filters.year}).length }} | <a href ng-click="query = ''; updateVis();">Clear Selection ({{(papers).length}})</a>  -->
+                    <p><strong> CC - {{filters.year}} Visualizations:</strong> {{filtered.length}} / {{(papers| filter: {year:filters.year}).length }} | <a href ng-click="query = ''; updateVis();">Clear Selection ({{(papers).length}})</a> 
                     </br></br></p> 
 
                         <li ng-repeat="paper in filtered = (papers| filter: search  | filter: {year:filters.year} | orderBy:['-year', 'title'])" class="paper-thumbnails paper-animation">
