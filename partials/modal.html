@@ -7,7 +7,35 @@
     <p><div ng-show="paper.ID"><a ng-href="{{getReference()}}" target="_blank"><img alt="{{paper.title}}" title="{{paper.title}}" class="pull-right paper-image" ng-src="https://danubevislab.github.io/climatevis/papers/screenshots/{{paper.ID}}.PNG" /></a></div>
     <blockquote class="paper-abstract">{{paper.title}}</blockquote></p>
 
-<strong>Reference:</strong> <em>{{paper.authors}}</em><span ng-if="paper.doi"><em> - DOI: <a ng-href="{{getReference()}}" target="_blank">{{paper.doi}}</a></em></span>
+<strong>Reference:</strong> <em>{{paper.authors}}</em>
+<!-- <span ng-if="paper.doi"><em> - DOI: <a ng-href="{{getReference()}}" target="_blank">{{paper.doi}}</a></em></span> -->
+<p>
+        <span  class="label label-default">{{paper.data_temperatures}}</span>
+        <span  class="label label-default">{{paper.data_co2}}</span>
+        <span  class="label label-default">{{paper.data_global}}</span>
+        <span  class="label label-default">{{paper.data_local}}</span>
+        <span  class="label label-default">{{paper.data_causes}}</span>
+        <span  class="label label-default">{{paper.data_effects}}</span>
+        <span  class="label label-default">{{paper.data_descriptive}}</span>
+        <span  class="label label-default">{{paper.data_uncertainty}}</span>
+        
+        <span  class="label label-default">{{paper.tempvis_line_chart}}</span>
+        <span  class="label label-default">{{paper.tempvis_colored_map}}</span>
+        <span  class="label label-default">{{paper.tempvis_bar_chart}}</span>
+        <span  class="label label-default">{{paper.tempvis_other}}</span>
+
+        <span  class="label label-default">{{paper.timevis_1D_time_axis}}</span>
+        <span  class="label label-default">{{paper.timevis_2D_time_axis}}</span>
+        <span  class="label label-default">{{paper.timevis_3D_time_axis}}</span>
+        <!-- <span  class="label label-default">{{paper.tempvis_animation-slideshow}}</span> -->
+        <span  class="label label-default">{{paper.timevis_color_coding}}</span>
+
+        <span  class="label label-default">{{paper.multiple_views}}</span>
+        <span  class="label label-default">{{paper.interactive}}</span>
+        <span  class="label label-default">{{paper.video}}</span>
+        <span  class="label label-default">{{paper.narrative_vis}}</span>
+        <span  class="label label-default">{{paper.public_communication}}</span>
+</p>
 </div>
 <div class="modal-footer">
     <!-- <a ng-if="getReference()" type="button" ng-href="{{getReference()}}" target="_blank" class="btn btn-danger">Visit  {{getReferenceName()}} Website</a> -->

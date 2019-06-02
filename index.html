@@ -93,7 +93,7 @@
                                 <hr>
                                 <span>Encoded Types of Data:</span>
                                 <a class="label label-default" href ng-click="query = 'temperature'; updateVis();">Temperature ({{(papers|filter: {cluster:'temperature'}).length}})</a> |
-                                <a class="label label-default" href ng-click="query = 'prognostic'; updateVis();">CO2 concentration ({{(papers|filter: {cluster:'co2'}).length}})</a> |
+                                <a class="label label-default" href ng-click="query = 'co2'; updateVis();">CO2 concentration ({{(papers|filter: {cluster:'co2'}).length}})</a> |
                                 <a class="label label-default" href ng-click="query = 'global'; updateVis();">Global Data ({{(papers|filter: {cluster:'global'}).length}})</a> |
                                 <a class="label label-default" href ng-click="query = 'local'; updateVis();">Local Data ({{(papers|filter: {cluster:'local'}).length}})</a> |
                                 <a class="label label-default" href ng-click="query = 'causes'; updateVis();">CC Causes ({{(papers|filter: {cluster:'causes'}).length}})</a> |
@@ -124,7 +124,7 @@
                                 <a class="label label-default" href ng-click="query = 'interactive'; updateVis();">Interactive ({{(papers|filter: {cluster:'interactive'}).length}})</a> |
                                 <a class="label label-default" href ng-click="query = 'video'; updateVis();">Video ({{(papers|filter: {cluster:'video'}).length}})</a> |
                                 <a class="label label-default" href ng-click="query = 'narrative'; updateVis(); ">Narrative VIS ({{(papers|filter: {cluster:'narrative'}).length}})</a> |
-                                <a class="label label-default" href ng-click="query = 'colorcoding'; updateVis(); ">Public Audience ({{(papers|filter: {cluster:'colorcoding'}).length}})</a> |
+                                <a class="label label-default" href ng-click="query = 'publicaudiences'; updateVis(); ">Public Audience ({{(papers|filter: {cluster:'publicaudiences'}).length}})</a> |
                                 <!-- <a class="label label-default" href ng-click="query = 'other'; updateVis();">Other ({{(papers|filter: {cluster:'other'}).length}})</a> | -->
 
                             </div>
@@ -143,9 +143,34 @@
                             <strong>{{paper.title}}</strong> ({{paper.year}})<br/>
 
                             <em>{{paper.conference}}</em><span ng-if="paper.doi"><em> - DOI: {{paper.doi}}</em></span>
-                            <p>{{paper.abstract| limitTo : 100 }} ... </p>
-                        </li>
+                            <!-- <p>{{paper.abstract| limitTo : 100 }} ... </p> -->
 
+                            <span  class="label label-default">{{paper.data_temperatures}}</span>
+                            <span  class="label label-default">{{paper.data_co2}}</span>
+                            <span  class="label label-default">{{paper.data_global}}</span>
+                            <span  class="label label-default">{{paper.data_local}}</span>
+                            <span  class="label label-default">{{paper.data_causes}}</span>
+                            <span  class="label label-default">{{paper.data_effects}}</span>
+                            <span  class="label label-default">{{paper.data_descriptive}}</span>
+                            <span  class="label label-default">{{paper.data_uncertainty}}</span>
+                            
+                            <span  class="label label-default">{{paper.tempvis_line_chart}}</span>
+                            <span  class="label label-default">{{paper.tempvis_colored_map}}</span>
+                            <span  class="label label-default">{{paper.tempvis_bar_chart}}</span>
+                            <span  class="label label-default">{{paper.tempvis_other}}</span>
+
+                            <span  class="label label-default">{{paper.timevis_1D_time_axis}}</span>
+                            <span  class="label label-default">{{paper.timevis_2D_time_axis}}</span>
+                            <span  class="label label-default">{{paper.timevis_3D_time_axis}}</span>
+                            <!-- <span  class="label label-default">{{paper.tempvis_animation-slideshow}}</span> -->
+                            <span  class="label label-default">{{paper.timevis_color_coding}}</span>
+
+                            <span  class="label label-default">{{paper.multiple_views}}</span>
+                            <span  class="label label-default">{{paper.interactive}}</span>
+                            <span  class="label label-default">{{paper.video}}</span>
+                            <span  class="label label-default">{{paper.narrative_vis}}</span>
+                            <span  class="label label-default">{{paper.public_communication}}</span>
+                        </li>
                     </ul>
 
                 </div>
