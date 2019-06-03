@@ -133,7 +133,8 @@
                 <div class="col-sm-10" ng-show="isSet(1)">
 				
 				  <ul class="papers">
-                    <p><strong>{{filters.year}} Papers:</strong> {{filtered.length}} / {{(papers| filter: {year:filters.year}).length }}</br></br></p>
+                    <!-- <p><strong>{{filters.year}} Papers:</strong> {{filtered.length}} / {{(papers| filter: {year:filters.year}).length }}</br></br></p> -->
+                    <p><strong> CC - {{filters.year}} Visualizations:</strong> {{filtered.length}} / {{(papers| filter: {year:filters.year}).length }} | <a href ng-click="query = ''; updateVis();">Clear Selection ({{(papers).length}})</a> 
 
                         <li ng-click="open(paper)" ng-repeat="paper in filtered = (papers | filter: search |filter: {year:filters.year}  | orderBy:['-year', 'title'])" class="paper-listing paper-animation">
                             
